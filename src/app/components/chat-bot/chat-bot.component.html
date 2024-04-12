@@ -1,0 +1,14 @@
+<div class="chat-btn" (click)="toggleChat()">
+  <img src="../img/chatbot/messenger-apps-icon.png" alt="Chat Logo">
+</div>
+
+<div *ngIf="dialogflowIframeVisible" class="chat-iframe-wrapper">
+  <div class="custom-chat-title">
+    <b>MartfuryShop📚 Chat Bot🤖</b>
+    <p></p>
+    <b>Xin Chào👋👋👋</b>
+  </div>
+  <iframe *ngIf="dialogflowIframeVisible" #dialogflowFrame id="dialogflow-chat-iframe" class="open"
+          src="https://console.dialogflow.com/api-client/demo/embedded/4cce3927-d667-4266-a007-1db462472eb3">
+  </iframe>
+</div>

@@ -1,0 +1,38 @@
+<div class="chat-btn" (click)="toggleChat()">
+  <img src="../img/chatbot/messenger-apps-icon.png" alt="Chat Logo">
+</div>
+
+<div class="chat-container" [ngClass]="{'open': chatOpen}">
+  <div class="chat-title">
+    <b>MartfuryShop📚 Chat Bot🤖</b>
+  </div>
+
+  <div class="chat-box">
+    <div *ngFor="let message of messages" class="message"
+         [ngClass]="{'user-message': message.sender === 'user', 'bot-message': message.sender === 'bot'}">
+      <div class="message-content" *ngIf="!message.imageUrl">
+        {{ message.text }}
+      </div>
+      <img *ngIf="message.imageUrl" [src]="message.imageUrl" class="message-image" alt="" src="">
+    </div>
+  </div>
+
+  <div class="input-box">
+    <input type="file" #fileInput style="display: none;" accept="image/*" (change)="sendImage($event)">
+    <button (click)="fileInput.click()" class="img-btn">
+      <i class="fa fa-photo"></i>
+    </button>
+
+    <label>
+      <input type="text" [(ngModel)]="message" (keydown.enter)="sendMessage()" placeholder="Type your message...">
+    </label>
+
+    <button (click)="startVoiceRecognition()" class="voice-btn">
+      <i class="fa fa-microphone" aria-hidden="true"></i>
+    </button>
+
+    <button (click)="sendMessage()" class="send-btn">
+      <i class="fa fa-paper-plane" aria-hidden="true"></i>
+    </button>
+  </div>
+</div>

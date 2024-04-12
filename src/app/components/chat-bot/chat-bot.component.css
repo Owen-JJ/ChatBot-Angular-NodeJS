@@ -1,0 +1,74 @@
+.chat-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #222;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 999;
+  transition: background 0.3s ease;
+  overflow: hidden;
+}
+
+.chat-btn:hover {
+  background: #326e51;
+}
+
+.chat-btn img {
+  width: 35px;
+  height: 35px;
+}
+
+.chat-iframe-wrapper {
+  position: fixed;
+  bottom: 95px; /* Adjust this as needed to not overlap with other elements */
+  right: 30px;
+  z-index: 1001; /* Ensure this is above the iframe z-index */
+  width: 350px;
+}
+
+.custom-chat-title {
+  position: relative;
+  z-index: 1001;
+  text-align: center;
+  background-color: #000;
+  color: white;
+  padding: 10px;
+  min-height: 110px;
+  top: -330px;
+  border-radius: 10px 10px 0 0;
+  font-size: 20px;
+  /* Add your desired custom styles here */
+}
+
+.custom-chat-title p {
+  color: white;
+  font-size: 16px;
+}
+
+#dialogflow-chat-iframe {
+  width: 350px;
+  height: 430px;
+  border: none;
+  position: fixed;
+  bottom: 105px;
+  right: 30px;
+  z-index: 1000;
+  transition: opacity 0.3s ease, box-shadow 0.3s ease;
+  opacity: 1;
+  visibility: visible;
+  box-shadow: 0 5px 30px rgba(0,0,0,0.3);
+  border-radius: 10px;
+}
+
+#dialogflow-chat-iframe.open {
+  opacity: 1;
+  visibility: visible;
+}
+
